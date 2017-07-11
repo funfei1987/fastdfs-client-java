@@ -4,7 +4,7 @@
 
   <groupId>org.csource</groupId>
   <artifactId>fastdfs-client-java</artifactId>
-  <version>1.27-SNAPSHOT</version>
+  <version>1.27.SNAPSHOT</version>
   <name>fastdfs-client-java</name>
   <description>fastdfs client for java</description>
   <packaging>jar</packaging>
@@ -14,7 +14,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.test.failure.ignore>true</maven.test.failure.ignore>
     <maven.test.skip>true</maven.test.skip>
-    <jdk.version>1.6</jdk.version>
+    <jdk.version>1.8</jdk.version>
   </properties>
 
   <build>
@@ -29,6 +29,39 @@
           <target>${jdk.version}</target>
         </configuration>
       </plugin>
+       <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-source-plugin</artifactId>
+    <version>3.0.1</version>
+    <executions>
+    	<execution>
+             <id>attach-sources</id>
+             <goals>
+                 <goal>jar</goal>
+             </goals>
+         </execution>
+    
+    </executions>
+  </plugin>
+   <plugin>          
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-javadoc-plugin</artifactId>
+    <version>2.10.1</version>
+    <configuration>
+         <encoding>UTF-8</encoding>
+         <aggregate>true</aggregate>
+         <charset>UTF-8</charset>
+         <docencoding>UTF-8</docencoding>
+     </configuration>
+    <executions>
+      <execution>
+        <id>attach-javadocs</id>
+          <goals>
+            <goal>jar</goal>
+          </goals>
+      </execution>
+    </executions>
+  </plugin>   
     </plugins>
   </build>
 

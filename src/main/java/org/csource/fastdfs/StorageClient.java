@@ -46,7 +46,13 @@ public class StorageClient {
     this.trackerServer = trackerServer;
     this.storageServer = storageServer;
   }
-
+	public TrackerServer getTrackerServer() {
+		return trackerServer;
+	}
+	
+	public StorageServer getStorageServer() {
+		return storageServer;
+	}
   /**
    * get the error code of last call
    *
